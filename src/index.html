@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>OTP Generator</title>
+        <link rel="icon" type="image/x-icon" href="favicon.png" />
+        <link href="./bootstrap/bootstrap.min.css" rel="stylesheet" />
+        <link href="./fontawesome/css/fontawesome.min.css" rel="stylesheet" />
+        <link href="./fontawesome/css/solid.min.css" rel="stylesheet" />
+        <link href="./style.css" rel="stylesheet" />
+    </head>
+
+    <body class="d-flex flex-column h-100">
+        <div class="container mt-5">
+            <div class="row mb-3">
+                <div class="col">
+                    <h1>OTP Generator</h1>
+                </div>
+            </div>
+
+            <div class="row mb-3">
+                <div class="form-floating">
+                    <input type="text" class="form-control" id="secret" placeholder="s3cret" />
+                    <label for="secret">OTP Secret</label>
+                    <div id="secretError" class="form-text" hidden></div>
+                </div>
+            </div>
+
+            <div class="row mb-3">
+                <div class="col">
+                    <h3>
+                        One Time Password: <span id="otp"></span>
+                        <i
+                            class="fa-solid fa-copy"
+                            id="copy"
+                            onclick="copy()"
+                            style="cursor: pointer"
+                            title="Copy OTP"
+                        ></i>
+                    </h3>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="progress">
+                    <div
+                        class="progress-bar"
+                        role="progressbar"
+                        id="progressbar"
+                        style="width: 50%"
+                        aria-valuemin="0"
+                        aria-valuemax="100"
+                    >
+                        <span id="seconds"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer">
+            <button
+                type="button"
+                class="btn btn-secondary"
+                data-bs-toggle="modal"
+                data-bs-target="#aboutModal"
+                width="50px"
+            >
+                About
+            </button>
+        </div>
+
+        <!-- About Modal -->
+        <div class="modal fade" id="aboutModal" tabindex="-1" aria-labelledby="aboutModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="aboutModalLabel">About</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="row">
+                            <div class="col">
+                                <p>
+                                    The page is hosted with GitHub Pages. You can read their Privacy Policy
+                                    <a
+                                        href="https://docs.github.com/en/site-policy/privacy-policies/github-privacy-statement"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        >here</a
+                                    >.
+                                </p>
+                                <p>
+                                    No data is stored in your browser and no data is ever sent to the server at
+                                    <code><span id="current-url"></span></code>.
+                                </p>
+
+                                <p>
+                                    Find the source code on
+                                    <a
+                                        href="https://github.com/Twi1ightSparkle/otp-generator"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        >GitHub</a
+                                    >.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col">
+                                <h5>Credits</h5>
+                                <ul>
+                                    <li>
+                                        Icons by
+                                        <a href="https://fontawesome.com/" target="_blank" rel="noopener noreferrer"
+                                            >Font Awesome</a
+                                        >
+                                        used under the terms of
+                                        <a
+                                            href="https://creativecommons.org/licenses/by/4.0/"
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            >CC BY 4.0 License</a
+                                        >.
+                                    </li>
+                                    <li>
+                                        Theme by
+                                        <a href="https://getbootstrap.com/" target="_blank" rel="noopener noreferrer"
+                                            >Bootstrap</a
+                                        >
+                                        used under the terms of
+                                        <a
+                                            href="https://github.com/twbs/bootstrap/blob/main/LICENSE"
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            >MIT License</a
+                                        >.
+                                    </li>
+                                    <li>
+                                        One-Time Password library
+                                        <a href="https://otplib.yeojz.dev/" target="_blank" rel="noopener noreferrer"
+                                            >otplib</a
+                                        >
+                                        used under the terms of
+                                        <a
+                                            href="https://github.com/yeojz/otplib/blob/master/LICENSE"
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            >MIT License</a
+                                        >.
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script src="./bootstrap/bootstrap.bundle.min.js"></script>
+        <script src="./otplib/buffer.js"></script>
+        <script src="./otplib/index.js"></script>
+        <script src="./script.js"></script>
+    </body>
+</html>

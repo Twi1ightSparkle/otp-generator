@@ -29,7 +29,6 @@ const countdown = () => {
 };
 
 const error = (errorText) => {
-    console.log(errorText);
     if (errorText) {
         secretId.classList.add('is-invalid');
         secretError.hidden = false;

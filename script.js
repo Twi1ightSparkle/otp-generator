@@ -1,6 +1,8 @@
 const authenticator = window.otplib.authenticator;
 
+const secretForm = document.getElementById('secretForm');
 const secretId = document.getElementById('secret');
+const showButton = document.getElementById('showButton');
 const otpId = document.getElementById('otp');
 const secondsId = document.getElementById('seconds');
 const progressbarId = document.getElementById('progressbar');
@@ -8,6 +10,20 @@ const copyId = document.getElementById('copy');
 const secretError = document.getElementById('secretError');
 
 let lastOtp;
+
+const show = () => {
+    const isHidden = secretId.type === 'password' ? true : false;
+
+    if (isHidden) {
+        showButton.innerHTML = '<i class="fa-solid fa-eye-slash"></i>';
+        showButton.title = 'Hide secret';
+        secretId.type = 'text';
+    } else {
+        showButton.innerHTML = '<i class="fa-solid fa-eye"></i>';
+        showButton.title = 'Show secret';
+        secretId.type = 'password';
+    }
+};
 
 const copy = () => {
     navigator.clipboard.writeText(lastOtp);
@@ -31,14 +47,13 @@ const countdown = () => {
 const error = (errorText) => {
     if (errorText) {
         secretId.classList.add('is-invalid');
-        secretError.hidden = false;
+        secretForm.classList.add('is-invalid');
         secretError.textContent = errorText;
         otpId.textContent = '';
         lastOtp = '';
     } else {
-        secretId.invalid = false;
         secretId.classList.remove('is-invalid');
-        secretError.hidden = true;
+        secretForm.classList.remove('is-invalid');
     }
 };
 

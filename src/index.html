@@ -21,10 +21,17 @@
             </div>
 
             <div class="row mb-3">
-                <div class="form-floating">
-                    <input type="text" class="form-control" id="secret" placeholder="s3cret" />
-                    <label for="secret">OTP Secret</label>
-                    <div id="secretError" class="form-text" hidden></div>
+                <div class="input-group has-validation">
+                    <div class="form-floating" id="secretForm">
+                        <input type="password" class="form-control" id="secret" />
+                        <label for="secret">OTP Secret</label>
+                    </div>
+                    <span class="input-group-text">
+                        <div id="showButton" title="Show secret" class="pointer" onclick="show()">
+                            <i class="fa-solid fa-eye"></i>
+                        </div>
+                    </span>
+                    <div id="secretError" class="invalid-feedback"></div>
                 </div>
             </div>
 

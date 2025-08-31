@@ -23,11 +23,20 @@
             <div class="row mb-3">
                 <div class="input-group has-validation">
                     <div class="form-floating" id="secretForm">
-                        <input type="password" class="form-control" id="secret" />
+                        <input
+                            type="password"
+                            class="form-control"
+                            id="secret"
+                        />
                         <label for="secret">OTP Secret</label>
                     </div>
                     <span class="input-group-text">
-                        <div id="showButton" title="Show secret" class="pointer" onclick="show()">
+                        <div
+                            id="showButton"
+                            title="Show secret"
+                            class="pointer"
+                            onclick="show()"
+                        >
                             <i class="fa-solid fa-eye"></i>
                         </div>
                     </span>
@@ -79,18 +88,30 @@
         </div>
 
         <!-- About Modal -->
-        <div class="modal fade" id="aboutModal" tabindex="-1" aria-labelledby="aboutModalLabel" aria-hidden="true">
+        <div
+            class="modal fade"
+            id="aboutModal"
+            tabindex="-1"
+            aria-labelledby="aboutModalLabel"
+            aria-hidden="true"
+        >
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="modal-header">
                         <h5 class="modal-title" id="aboutModalLabel">About</h5>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        <button
+                            type="button"
+                            class="btn-close"
+                            data-bs-dismiss="modal"
+                            aria-label="Close"
+                        ></button>
                     </div>
                     <div class="modal-body">
                         <div class="row">
                             <div class="col">
                                 <p>
-                                    The page is hosted with GitHub Pages. You can read their Privacy Policy
+                                    The page is hosted with GitHub Pages. You
+                                    can read their Privacy Policy
                                     <a
                                         href="https://docs.github.com/en/site-policy/privacy-policies/github-privacy-statement"
                                         target="_blank"
@@ -99,7 +120,8 @@
                                     >.
                                 </p>
                                 <p>
-                                    No data is stored in your browser and no data is ever sent to the server at
+                                    No data is stored in your browser and no
+                                    data is ever sent to the server at
                                     <code><span id="current-url"></span></code>.
                                 </p>
 
@@ -121,7 +143,10 @@
                                 <ul>
                                     <li>
                                         Icons by
-                                        <a href="https://fontawesome.com/" target="_blank" rel="noopener noreferrer"
+                                        <a
+                                            href="https://fontawesome.com/"
+                                            target="_blank"
+                                            rel="noopener noreferrer"
                                             >Font Awesome</a
                                         >
                                         used under the terms of
@@ -134,7 +159,10 @@
                                     </li>
                                     <li>
                                         Theme by
-                                        <a href="https://getbootstrap.com/" target="_blank" rel="noopener noreferrer"
+                                        <a
+                                            href="https://getbootstrap.com/"
+                                            target="_blank"
+                                            rel="noopener noreferrer"
                                             >Bootstrap</a
                                         >
                                         used under the terms of
@@ -147,7 +175,10 @@
                                     </li>
                                     <li>
                                         One-Time Password library
-                                        <a href="https://otplib.yeojz.dev/" target="_blank" rel="noopener noreferrer"
+                                        <a
+                                            href="https://otplib.yeojz.dev/"
+                                            target="_blank"
+                                            rel="noopener noreferrer"
                                             >otplib</a
                                         >
                                         used under the terms of
@@ -163,7 +194,13 @@
                         </div>
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <button
+                            type="button"
+                            class="btn btn-secondary"
+                            data-bs-dismiss="modal"
+                        >
+                            Close
+                        </button>
                     </div>
                 </div>
             </div>
